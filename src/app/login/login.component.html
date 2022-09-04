@@ -25,7 +25,7 @@
                                     <mat-form-field appearance="fill">
                                         <mat-label>Ingrese su contraseña aqui...</mat-label>
                                         <input matInput [type]="hide ? 'password' : 'text'">
-                                        <button mat-icon-button matSuffix (click)="hide = !hide">
+                                        <button  type="button"  mat-icon-button matSuffix (click)="hide = !hide">
                                             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                                         </button>
                                     </mat-form-field>
@@ -54,7 +54,7 @@
                                     </div>
                                     <mat-form-field appearance="fill">
                                         <mat-label>Ingrese su nombre aqui...</mat-label>
-                                        <input matInput placeholder="Eduardo Loya Montes de Oca">
+                                        <input matInput placeholder="Karen Hernandez Rebollar">
                                     </mat-form-field>
 
                                     <div fxLayout="row">
@@ -72,14 +72,14 @@
                                     <mat-form-field appearance="fill">
                                         <mat-label>Ingrese su contraseña aqui...</mat-label>
                                         <input matInput [type]="hide ? 'password' : 'text'">
-                                        <button mat-icon-button matSuffix (click)="hide = !hide">
+                                        <button type="button" mat-icon-button matSuffix (click)="hide = !hide">
                                             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                                         </button>
                                     </mat-form-field>
                                     <mat-form-field appearance="fill">
                                         <mat-label>Confirmar Contraseña</mat-label>
                                         <input matInput [type]="hide ? 'password' : 'text'">
-                                        <button mat-icon-button matSuffix (click)="hide = !hide">
+                                        <button type="button" mat-icon-button matSuffix (click)="hide = !hide">
                                             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                                         </button>
                                     </mat-form-field>
