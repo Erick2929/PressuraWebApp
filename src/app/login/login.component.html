@@ -1,0 +1,109 @@
+
+<div class="login-container">
+
+    <div fxLayout="column" fxFlex="20"></div>
+        <div fxLayout="column" fxFlex = "60" >
+        <div fxLayout="row" fxLayoutAlign="center center" >
+            <mat-tab-group  mat-align-tabs="center" class="mat-tabs" >
+                <mat-tab label="Log in"> 
+                    <mat-card class="light-color">
+                        <mat-card-content>
+                            <form>
+                                <div fxLayout="column" >
+                                    <div fxLayout="row">
+                                        <p><strong>Correo Electronico:</strong></p>
+                                    </div>
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Ingrese su correo aqui...</mat-label>
+                                        <input matInput placeholder="pat@example.com">
+                                        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                                    </mat-form-field>
+
+                                    <div fxLayout="row">
+                                        <p> <strong>Contraseña:</strong> </p>
+                                    </div>
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Ingrese su contraseña aqui...</mat-label>
+                                        <input matInput [type]="hide ? 'password' : 'text'">
+                                        <button mat-icon-button matSuffix (click)="hide = !hide">
+                                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                        </button>
+                                    </mat-form-field>
+
+                                    <div fxLayout="row" fxLayoutAlign="center">
+                                        <button mat-raised-button type="submit">INGRESAR</button>
+                                    </div>
+
+                                </div>
+                                
+                            </form>
+                           
+                            
+                        </mat-card-content>
+                        
+                    </mat-card>
+                </mat-tab>
+                <mat-tab label="Sign in"> 
+                    <mat-card class="light-color">
+                        <mat-card-content>
+                            <form>
+                                <div fxLayout="column" >
+
+                                    <div fxLayout="row">
+                                        <p><strong>Nombre Completo:</strong></p>
+                                    </div>
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Ingrese su nombre aqui...</mat-label>
+                                        <input matInput placeholder="Eduardo Loya Montes de Oca">
+                                    </mat-form-field>
+
+                                    <div fxLayout="row">
+                                        <p><strong>Correo Electronico:</strong></p>
+                                    </div>
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Ingrese su correo aqui...</mat-label>
+                                        <input matInput placeholder="pat@example.com">
+                                        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                                    </mat-form-field>
+
+                                    <div fxLayout="row">
+                                        <p> <strong>Contraseña:</strong> </p>
+                                    </div>
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Ingrese su contraseña aqui...</mat-label>
+                                        <input matInput [type]="hide ? 'password' : 'text'">
+                                        <button mat-icon-button matSuffix (click)="hide = !hide">
+                                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                        </button>
+                                    </mat-form-field>
+                                    <mat-form-field appearance="fill">
+                                        <mat-label>Confirmar Contraseña</mat-label>
+                                        <input matInput [type]="hide ? 'password' : 'text'">
+                                        <button mat-icon-button matSuffix (click)="hide = !hide">
+                                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                        </button>
+                                    </mat-form-field>
+
+                                    <div fxLayout="row" fxLayoutAlign="center">
+                                        <button mat-raised-button type="submit">INGRESAR</button>
+                                    </div>
+
+                                </div>
+                                
+                            </form>
+                           
+                            
+                        </mat-card-content>
+                        
+                    </mat-card>
+                </mat-tab>
+              </mat-tab-group>
+        </div>
+    
+    </div>
+    <div fxLayout="column" fxFlex="20"></div>
+    
+</div>
+
+
+

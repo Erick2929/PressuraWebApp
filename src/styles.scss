@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+//@import 'variables';
+//@import '../node_modules/font-awesome/scss/font-awesome.scss';
+
+$dark-primary: rgb(124, 153, 156);
+$light-primary: rgb(198, 238, 243);
+$light-secondary: rgb(208, 249, 255);
+
+body {
+    background-color: $light-primary;
+}
+// some basic resets 
+

@@ -1,0 +1,26 @@
+$dark-primary: rgb(124, 153, 156);
+$light-primary: rgb(243, 243, 243);
+$light-secondary: rgb(243, 243, 243);
+
+
+
+.light-color{
+    background-color: white;
+}
+
+.login-container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.mat-tabs{
+    background-color: white;
+}
