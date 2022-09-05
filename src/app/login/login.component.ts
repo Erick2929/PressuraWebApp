@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UserService } from '../user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,22 +12,44 @@ import { FormControl, Validators } from '@angular/forms';
 
 export class LoginComponent implements OnInit {
 
-  email = new FormControl('', [Validators.required, Validators.email]);
-
   hide = true;
 
-  getErrorMessage() {
+  formReg!: FormGroup;
+  formSign! : FormGroup;
 
-    if (this.email.hasError('required')) {
-      return 'You must enter a value';
-    }
+  constructor(
+    private userService: UserService,
+    private router: Router
+    ) {
+    this.formReg = new FormGroup({
+      email : new FormControl(),
+      password: new FormControl()
+    })
+    this.formSign = new FormGroup({
+      email : new FormControl(),
+      password : new FormControl()
 
-    return this.email.hasError('email') ? 'Not a valid email' : '';
-  }
-
-  constructor() { }
+    })
+   }
 
   ngOnInit(): void {
   }
 
+  onSubmitLogin(){
+    this.userService.login(this.formSign.value)
+    .then(response => {
+      console.log(response);
+      this.router.navigate(['/main-app-view']);
+    })
+    .catch(error => console.log(error));
+  }
+
+  onSubmitRegister(){
+    this.userService.register(this.formReg.value)
+    .then(response => {
+      console.log(response);
+      this.router.navigate(['/login']);
+    })
+    .catch(error => console.log(error));
+  }
 }

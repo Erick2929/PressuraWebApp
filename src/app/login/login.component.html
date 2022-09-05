@@ -8,15 +8,15 @@
                 <mat-tab label="Log in"> 
                     <mat-card class="light-color">
                         <mat-card-content>
-                            <form>
+                            <form [formGroup]="formSign" (ngSubmit)="onSubmitLogin()">
                                 <div fxLayout="column" >
                                     <div fxLayout="row">
                                         <p><strong>Correo Electronico:</strong></p>
                                     </div>
                                     <mat-form-field appearance="fill">
                                         <mat-label>Ingrese su correo aqui...</mat-label>
-                                        <input matInput placeholder="pat@example.com">
-                                        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                                        <input matInput class="form-control" formControlName="email" placeholder="pat@example.com">
+                                        <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
                                     </mat-form-field>
 
                                     <div fxLayout="row">
@@ -24,7 +24,7 @@
                                     </div>
                                     <mat-form-field appearance="fill">
                                         <mat-label>Ingrese su contraseña aqui...</mat-label>
-                                        <input matInput [type]="hide ? 'password' : 'text'">
+                                        <input matInput class="form-control" formControlName="password" [type]="hide ? 'password' : 'text'">
                                         <button  type="button"  mat-icon-button matSuffix (click)="hide = !hide">
                                             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                                         </button>
@@ -46,7 +46,7 @@
                 <mat-tab label="Sign in"> 
                     <mat-card class="light-color">
                         <mat-card-content>
-                            <form>
+                            <form [formGroup]="formReg" (ngSubmit)="onSubmitRegister()">
                                 <div fxLayout="column" >
 
                                     <div fxLayout="row">
@@ -62,8 +62,8 @@
                                     </div>
                                     <mat-form-field appearance="fill">
                                         <mat-label>Ingrese su correo aqui...</mat-label>
-                                        <input matInput placeholder="pat@example.com">
-                                        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                                        <input matInput class="form-control" formControlName="email" placeholder="pat@example.com">
+                                        <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
                                     </mat-form-field>
 
                                     <div fxLayout="row">
@@ -71,7 +71,7 @@
                                     </div>
                                     <mat-form-field appearance="fill">
                                         <mat-label>Ingrese su contraseña aqui...</mat-label>
-                                        <input matInput [type]="hide ? 'password' : 'text'">
+                                        <input matInput class="form-control" formControlName="password" [type]="hide ? 'password' : 'text'">
                                         <button type="button" mat-icon-button matSuffix (click)="hide = !hide">
                                             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                                         </button>

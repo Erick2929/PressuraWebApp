@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "pressuraapp": {
+      "hosting": {
+        "pressura": [
+          "pressuraapp"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "pressuraapp"
+  }
+}
