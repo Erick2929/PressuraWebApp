@@ -4,7 +4,7 @@
     <div fxLayout="column" fxFlex="20"></div>
         <div fxLayout="column" fxFlex = "60" >
         <div fxLayout="row" fxLayoutAlign="center center" >
-            <mat-tab-group  mat-align-tabs="center" class="mat-tabs" >
+            <mat-tab-group  mat-align-tabs="center"  color="primary"  backgroundColor="warn" class="mat-tabs" >
                 <mat-tab label="Log in"> 
                     <mat-card class="light-color">
                         <mat-card-content>
@@ -25,15 +25,22 @@
                                     <mat-form-field appearance="fill">
                                         <mat-label>Ingrese su contraseña aqui...</mat-label>
                                         <input matInput class="form-control" formControlName="password" [type]="hide ? 'password' : 'text'">
-                                        <button  type="button"  mat-icon-button matSuffix (click)="hide = !hide">
+                                        <button  type="button" mat-icon-button matSuffix (click)="hide = !hide">
                                             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                                         </button>
                                     </mat-form-field>
 
-                                    <div fxLayout="row" fxLayoutAlign="center">
-                                        <button mat-raised-button type="submit">INGRESAR</button>
-                                    </div>
 
+                                </div>
+
+                                <div fxLayout="column" fxLayoutAlign="space-around center" >
+
+                                    <button mat-raised-button color="warn" type="submit">INGRESAR</button>
+                                    <div class="paddingontop">
+                                        <button mat-raised-button color="primary" type="button" (click)="googleLogin()" >
+                                            INGRESA CON GOOGLE 
+                                        </button>
+                                    </div>
                                 </div>
                                 
                             </form>
@@ -84,8 +91,14 @@
                                         </button>
                                     </mat-form-field>
 
-                                    <div fxLayout="row" fxLayoutAlign="center">
-                                        <button mat-raised-button type="submit">INGRESAR</button>
+                                    <div fxLayout="column" fxLayoutAlign="space-around center" >
+
+                                        <button mat-raised-button color="warn" type="submit">INGRESAR</button>
+                                        <div class="paddingontop">
+                                            <button mat-raised-button color="primary" type="button" (click)="googleLogin()" >
+                                                INGRESA CON GOOGLE 
+                                            </button>
+                                        </div>
                                     </div>
 
                                 </div>

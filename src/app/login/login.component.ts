@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   hide = true;
-
+  incorrectUorP!: boolean;
   formReg!: FormGroup;
   formSign! : FormGroup;
 
@@ -40,6 +40,18 @@ export class LoginComponent implements OnInit {
     .then(response => {
       console.log(response);
       this.router.navigate(['/main-app-view']);
+      this.incorrectUorP = false;
+    })
+    .catch(error => {
+      console.log(error)
+    });
+  }
+
+  googleLogin(){
+    this.userService.loginGoogle()
+    .then( response => {
+      console.log(response);
+      this.router.navigate(['/main-app-view']);
     })
     .catch(error => console.log(error));
   }
@@ -48,8 +60,16 @@ export class LoginComponent implements OnInit {
     this.userService.register(this.formReg.value)
     .then(response => {
       console.log(response);
+      this.incorrectUorP = false;
       this.router.navigate(['/login']);
     })
-    .catch(error => console.log(error));
+    .catch(() => {
+      this.incorrectUorP = true;
+    });
   }
+
+  getErrorMessage(){
+    return 'Usuario o contraseña invalidos'
+  }
+
 }
