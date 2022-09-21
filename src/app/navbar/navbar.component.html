@@ -1,0 +1,46 @@
+<mat-toolbar color="primary">
+
+    <button mat-icon-button [matMenuTriggerFor]="menu" class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+    </button>
+    
+    <mat-menu #menu="matMenu">
+          <button 
+          mat-menu-item matTooltip="Navegar hacia mi perfil" 
+          matTooltipClass="tooltip-colored" 
+          matTooltipPosition="right"
+          (click)="mainProfile()" 
+          >
+            <mat-icon>person</mat-icon>
+            <span>Mi Perfil</span>
+          </button>
+          <button 
+          mat-menu-item matTooltip="Navegar hacia mis pacientes" 
+          matTooltipClass="tooltip-colored" 
+          matTooltipPosition="right" 
+          (click)="mainView()"
+          >
+            <mat-icon>group</mat-icon>
+            <span>Mis Pacientes</span>
+          </button>
+          <button mat-menu-item
+          matTooltip="Agregar un paciente a mi lista" 
+          matTooltipClass="tooltip-colored" 
+          matTooltipPosition="right"
+          >
+            <mat-icon>person_add</mat-icon>
+            <span>Agregar Pacientes</span>
+          </button>
+      </mat-menu>
+
+    <span>Pressura</span>
+
+    <span class="example-spacer"></span>
+
+    <button mat-raised-button 
+    matTooltip="Salir de la cuenta" 
+    matTooltipClass="tooltip-colored" 
+    matTooltipPosition="left" 
+    class="white-button" (click)="logOut()">Log out</button>
+
+</mat-toolbar>

@@ -2,20 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../user.service';
 import { NavbarComponent } from '../navbar/navbar.component';
-import {FormControl} from '@angular/forms';
-
 
 @Component({
-  selector: 'app-main',
-  templateUrl: './main.component.html',
-  styleUrls: ['./main.component.scss']
+  selector: 'app-main-profile',
+  templateUrl: './main-profile.component.html',
+  styleUrls: ['./main-profile.component.scss']
 })
-export class MainComponent implements OnInit {
-
-
-  myControl = new FormControl('');
-  options: string[] = ['One', 'Two', 'Three'];
-  panelOpenState = false;
+export class MainProfileComponent implements OnInit {
 
   constructor(
     private router: Router,
@@ -25,10 +18,6 @@ export class MainComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  volverLogin(){
-    this.router.navigate(['/login']);
-  }
-
   logOut(){
     this.userService.logout()
     .then( () => {
@@ -36,5 +25,6 @@ export class MainComponent implements OnInit {
     })
     .catch();
   }
+
 
 }

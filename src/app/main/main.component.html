@@ -1,7 +1,82 @@
+<div fxLayout="column" >
+    <app-navbar></app-navbar>
 
-    <div fxLayout="row" fxLayoutAlign="center center">
-        <button mat-raised-button color="primary" class="center" (click)="volverLogin()" >Volver a Login</button>
+    <mat-toolbar class="light-blue">
+
+        <span>Buscar un paciente: </span>
+
+        <span class="example-spacer"></span>
+
+        <form class="example-form">
+            <mat-form-field class="example-full-width" appearance="fill">
+
+              <mat-label>Number</mat-label>
+
+              <input type="text"
+                     placeholder="Pick one"
+                     aria-label="Number"
+                     matInput
+                     [formControl]="myControl"
+                     [matAutocomplete]="auto">
+
+                <mat-autocomplete #auto="matAutocomplete">
+                    <mat-option *ngFor="let option of options" [value]="option">
+                        {{option}}
+                    </mat-option>
+                </mat-autocomplete>
+                
+            </mat-form-field>
+          </form>
+
+    </mat-toolbar>
+
+</div>
+<div fxLayout="row" fxLayoutAlign="start none">
+
+    <div fxFlex>
+        <mat-accordion>
+            
+            <mat-expansion-panel (opened)="panelOpenState = true"
+                                 (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                    <mat-icon>person</mat-icon>
+                </mat-panel-title>
+                <mat-panel-description>
+                  Currently I am {{panelOpenState ? 'open' : 'closed'}}
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <p>I'm visible because I am open</p>
+            </mat-expansion-panel>
+
+
+            <mat-expansion-panel (opened)="panelOpenState = true"
+                                 (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Self aware panel
+                </mat-panel-title>
+                <mat-panel-description>
+                  Currently I am {{panelOpenState ? 'open' : 'closed'}}
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <p>I'm visible because I am open</p>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel (opened)="panelOpenState = true"
+                                 (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Self aware panel
+                </mat-panel-title>
+                <mat-panel-description>
+                  Currently I am {{panelOpenState ? 'open' : 'closed'}}
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <p>I'm visible because I am open</p>
+            </mat-expansion-panel>
+
+          </mat-accordion>
     </div>
-    <div class="paddingLeft" fxLayout="row" fxLayoutAlign="center center" >
-        <button mat-raised-button color="primary" class="center" (click)="logOut()" >Log out</button>
-    </div>
+
+</div>

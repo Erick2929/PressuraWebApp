@@ -1,7 +1,20 @@
-.paddingLeft{
-    padding-top: 10px;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.red{
+    background-color: red;
+}
+.example-spacer {
+    flex: 1 1 auto;
+}
+.light-blue{
+    background-color: rgb(114, 99, 250);
+    color: white;
+}
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+  
+.example-full-width {
+    width: 100%;
 }
