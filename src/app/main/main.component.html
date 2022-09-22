@@ -7,26 +7,20 @@
 
         <span class="example-spacer"></span>
 
-        <form class="example-form">
-            <mat-form-field class="example-full-width" appearance="fill">
-
-              <mat-label>Number</mat-label>
-
-              <input type="text"
-                     placeholder="Pick one"
-                     aria-label="Number"
-                     matInput
-                     [formControl]="myControl"
-                     [matAutocomplete]="auto">
-
-                <mat-autocomplete #auto="matAutocomplete">
-                    <mat-option *ngFor="let option of options" [value]="option">
-                        {{option}}
-                    </mat-option>
-                </mat-autocomplete>
-                
-            </mat-form-field>
-          </form>
+        <form>
+          <mat-form-field>
+            <mat-label>
+              <mat-icon>search</mat-icon>
+              Buscar Paciente
+            </mat-label>
+            <input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto">
+            <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+              <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                {{option.name}}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+        </form>
 
     </mat-toolbar>
 
@@ -36,45 +30,80 @@
     <div fxFlex>
         <mat-accordion>
             
-            <mat-expansion-panel (opened)="panelOpenState = true"
-                                 (closed)="panelOpenState = false">
+            <mat-expansion-panel 
+            (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false">
               <mat-expansion-panel-header>
                 <mat-panel-title>
                     <mat-icon>person</mat-icon>
+                    <h3>-- Karen Hernandez Rebollar</h3>
                 </mat-panel-title>
                 <mat-panel-description>
-                  Currently I am {{panelOpenState ? 'open' : 'closed'}}
+                  {{panelOpenState ? 'Presiona aqui para cerrar' : 'Presiona aqui para expandir la vista'}}
                 </mat-panel-description>
               </mat-expansion-panel-header>
-              <p>I'm visible because I am open</p>
+              <div fxLayout="row" fxLayoutAlign="space-between center">
+                <p>Info Basica del Paciente</p>
+
+                <button mat-raised-button 
+                matTooltip="Ver informacion completa del paciente" 
+                matTooltipClass="tooltip-colored" 
+                matTooltipPosition="left" 
+                color="primary" (click)="mainView()">Ver Perfil Paciente</button>
+              </div>
+
             </mat-expansion-panel>
 
-
-            <mat-expansion-panel (opened)="panelOpenState = true"
-                                 (closed)="panelOpenState = false">
+            <mat-expansion-panel 
+            (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false">
               <mat-expansion-panel-header>
                 <mat-panel-title>
-                  Self aware panel
+                    <mat-icon>person</mat-icon>
+                    <h3>-- Eduardo Loya Montes De Oca</h3>
                 </mat-panel-title>
                 <mat-panel-description>
-                  Currently I am {{panelOpenState ? 'open' : 'closed'}}
+                  {{panelOpenState ? 'Presiona aqui para cerrar' : 'Presiona aqui para expandir la vista'}}
                 </mat-panel-description>
               </mat-expansion-panel-header>
-              <p>I'm visible because I am open</p>
+              <div fxLayout="row" fxLayoutAlign="space-between center">
+                <p>Info Basica del Paciente</p>
+
+                <button mat-raised-button 
+                matTooltip="Ver informacion completa del paciente" 
+                matTooltipClass="tooltip-colored" 
+                matTooltipPosition="left" 
+                color="primary" (click)="mainView()">Ver Perfil Paciente</button>
+              </div>
+
             </mat-expansion-panel>
 
-            <mat-expansion-panel (opened)="panelOpenState = true"
-                                 (closed)="panelOpenState = false">
+            <mat-expansion-panel 
+            (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false">
               <mat-expansion-panel-header>
                 <mat-panel-title>
-                  Self aware panel
+                    <mat-icon>person</mat-icon>
+                    <h3>-- Erick Siller Ojeda</h3>
                 </mat-panel-title>
                 <mat-panel-description>
-                  Currently I am {{panelOpenState ? 'open' : 'closed'}}
+                  {{panelOpenState ? 'Presiona aqui para cerrar' : 'Presiona aqui para expandir la vista'}}
                 </mat-panel-description>
               </mat-expansion-panel-header>
-              <p>I'm visible because I am open</p>
+              <div fxLayout="row" fxLayoutAlign="space-between center">
+                <p>Info Basica del Paciente</p>
+
+                <button mat-raised-button 
+                matTooltip="Ver informacion completa del paciente" 
+                matTooltipClass="tooltip-colored" 
+                matTooltipPosition="left" 
+                color="primary" (click)="mainView()">Ver Perfil Paciente</button>
+              </div>
+
             </mat-expansion-panel>
+
+
+            
 
           </mat-accordion>
     </div>
