@@ -1,17 +1,23 @@
-<mat-toolbar color="primary">
-    <span class="example-spacer"></span>
-    <span>Pressura</span>
-    <span class="example-spacer"></span>
-</mat-toolbar>
 
+
+<mat-toolbar class="primary">
+
+    <img class="img" src="assets/imgs/pressura-logotitle-white.png" alt="logo">
+    <!-- <span class="example-spacer"></span>
+    <span>Pressura</span>
+    <span class="example-spacer"></span> -->
+</mat-toolbar>
 
 <div class="login-container">
 
     <div fxLayout="column" fxFlex="20"></div>
         <div fxLayout="column" fxFlex = "60" >
         <div fxLayout="row" fxLayoutAlign="center center" >
-            <mat-tab-group  mat-align-tabs="center"  color="primary"  backgroundColor="warn" class="mat-tabs" >
-                <mat-tab label="Log in"> 
+            <mat-tab-group  mat-align-tabs="center"  class="secondary">
+                <mat-tab> 
+                    <ng-template mat-tab-label>
+                        <span style="color: rgb(31, 204, 176);">Log in</span>
+                    </ng-template>
                     <mat-card class="light-color">
                         <mat-card-content>
                             <form [formGroup]="formSign" (ngSubmit)="onSubmitLogin()">
@@ -41,9 +47,9 @@
 
                                 <div fxLayout="column" fxLayoutAlign="space-around center" >
 
-                                    <button mat-raised-button color="warn" type="submit">INGRESAR</button>
+                                    <button mat-raised-button class="primary" type="submit">INGRESAR</button>
                                     <div class="paddingontop">
-                                        <button mat-raised-button color="primary" type="button" (click)="googleLogin()" >
+                                        <button mat-raised-button class="secondary" type="button" (click)="googleLogin()" >
                                             INGRESA CON GOOGLE 
                                         </button>
                                     </div>
@@ -56,7 +62,10 @@
                         
                     </mat-card>
                 </mat-tab>
-                <mat-tab label="Sign in"> 
+                <mat-tab> 
+                    <ng-template mat-tab-label>
+                        <span style="color: rgb(31, 204, 176);;">Sign in</span>
+                    </ng-template>
                     <mat-card class="light-color">
                         <mat-card-content>
                             <form [formGroup]="formReg" (ngSubmit)="onSubmitRegister()">
@@ -99,9 +108,9 @@
 
                                     <div fxLayout="column" fxLayoutAlign="space-around center" >
 
-                                        <button mat-raised-button color="warn" type="submit">INGRESAR</button>
+                                        <button mat-raised-button class="primary" type="submit">INGRESAR</button>
                                         <div class="paddingontop">
-                                            <button mat-raised-button color="primary" type="button" (click)="googleLogin()" >
+                                            <button mat-raised-button class="secondary" type="button" (click)="googleLogin()" >
                                                 INGRESA CON GOOGLE 
                                             </button>
                                         </div>

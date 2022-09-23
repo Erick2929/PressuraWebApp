@@ -1,6 +1,25 @@
-$dark-primary: rgb(124, 153, 156);
-$light-primary: rgb(243, 243, 243);
-$light-secondary: rgb(243, 243, 243);
+$primary: rgb(31, 204, 176);
+$light-w: rgb(242, 242, 242);
+$secondary: rgb(26, 26, 26);
+
+.img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 70%;
+    width: auto;
+}
+
+.primary{
+    color: $light-w;
+    background-color: $primary;
+}
+
+.secondary{
+    color: $primary;
+    background-color: $secondary;
+}
+
 
 .example-spacer{
     flex: 1 1 auto;

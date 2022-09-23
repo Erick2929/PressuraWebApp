@@ -1,3 +1,7 @@
+$primary: rgb(31, 204, 176);
+$light-w: rgb(242, 242, 242);
+$secondary: rgb(26, 26, 26);
+
 .red{
     background-color: red;
 }
@@ -5,7 +9,7 @@
     flex: 1 1 auto;
 }
 .light-blue{
-    background-color: rgb(114, 99, 250);
-    color: white;
+    background-color: $secondary;
+    color: $primary;
 }
 

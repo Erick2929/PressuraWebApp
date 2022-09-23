@@ -1,10 +1,18 @@
+$primary: rgb(31, 204, 176);
+$light-w: rgb(242, 242, 242);
+$secondary: rgb(26, 26, 26);
+
 .example-spacer {
     flex: 1 1 auto;
 }
+.green-w{
+    color: $light-w;
+    background-color: $primary;
+}
 .tooltip-colored {
-    background-color: #791cb7;
+    background-color: $primary;
 }
 .white-button{
-    color: purple;
-    background-color: white;
+    color: $primary;
+    background-color: $secondary;
 }

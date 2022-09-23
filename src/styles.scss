@@ -1,13 +1,18 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import 'https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap';
 //@import 'variables';
 //@import '../node_modules/font-awesome/scss/font-awesome.scss';
 
-$dark-primary: rgb(124, 153, 156);
-$light-primary: rgb(198, 238, 243);
-$light-secondary: rgb(208, 249, 255);
+$primary: rgb(31, 204, 176);
+$light-w: rgb(242, 242, 242);
+$secondary: rgb(26, 26, 26);
+
+html{
+    font-family: 'Roboto', sans-serif;
+}
 
 body {
-    background-color: rgb(216, 216, 216);
+    background-color: $light-w;
     margin: 0;
 }
 // some basic resets 
